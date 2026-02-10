@@ -1,1 +1,35 @@
 @import "tailwindcss";
+
+/* Declaring custom CSS variables */
+:root {
+  --primary: #0a2535;
+}
+
+/* Declaring Tailwind theme variables */
+@theme {
+  --color-primary: #0a2535;
+}
+
+.form-label{
+    @apply py-2 px-4 rounded-4xl bg-blue-100 inline-block my-1 mr-2;
+}
+
+[name=services]{
+    display: none;
+}
+
+[name=services]:focus ~ label{
+    background-color: #0a2535 !important;
+    color: white;
+
+}
+[name=services]:focus + label{
+    background-color: #0a2535 !important;
+    color: white;
+
+}
+
+.active{
+    background-color: #0a2535 !important;
+    color: white;
+}
