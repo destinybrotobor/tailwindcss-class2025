@@ -18,18 +18,16 @@
     display: none;
 }
 
-[name=services]:focus ~ label{
-    background-color: #0a2535 !important;
+[name=services]:checked ~ .form-label{
+    background-color: var(--primary) !important;
     color: white;
-
-}
-[name=services]:focus + label{
-    background-color: #0a2535 !important;
-    color: white;
-
 }
 
-.active{
-    background-color: #0a2535 !important;
+[name=budget]{
+    display: none;
+}
+
+[name=budget]:checked ~ .form-label{
+    background-color: var(--primary) !important;
     color: white;
 }
