@@ -7,17 +7,19 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
 
     <div id="page-div">
 
     </div>
-    
+
 
 
     <script src="js/intro.js"></script>
@@ -51,12 +53,12 @@
         // name = "Friday";
         // console.log(name);
         // age = 70;
-        
+
 
         // console.log(age);
 
         // let name, age, yearOfBirth;
-    
+
 
         // // Accept the name and age from the user using windows.prompt()
         // name = prompt("What is your name?");
@@ -74,7 +76,7 @@
 
         // console.log("Integer Division:", 11/2);
         // console.log("Modular Division:", 11%2);
-        
+
         // console.log("Integer Division:", 13/5);
         // console.log("Modular Division:", 13%5);
 
@@ -138,46 +140,105 @@
          */
 
         //  Example;
-        let option = Number(prompt(`Choose Your Favourite Color \n1. Blue\n2. Red\n3. Orange\n.4. Indigo`));
+        // let option = Number(prompt(`Choose Your Favourite Color \n1. Blue\n2. Red\n3. Orange\n.4. Indigo`));
 
-        switch (option){
-            case 1:
-                alert("Awh.. That's my favourite color too.");
-                break;
-            
-            case 2:
-                alert("Not, bad, red compliment my favourite");
-                break;
+        // switch (option){
+        //     case 1:
+        //         alert("Awh.. That's my favourite color too.");
+        //         break;
 
-            case 3: 
-                alert("Are you hungry? Orange color usually suits food.");
-                break;
+        //     case 2:
+        //         alert("Not, bad, red compliment my favourite");
+        //         break;
 
-            case 4:
-                alert("indigo is one of the Rainbows color");
-                break;
+        //     case 3: 
+        //         alert("Are you hungry? Orange color usually suits food.");
+        //         break;
 
-            default:
-                alert("Invalid option selected! Please, try again.");
-                break;
+        //     case 4:
+        //         alert("indigo is one of the Rainbows color");
+        //         break;
+
+        //     default:
+        //         alert("Invalid option selected! Please, try again.");
+        //         break;
+        // }
+
+        /**
+         * Loops (Iterative Control Flow)
+         * For Loop, While Loop, and Do-While Loop
+        */
+
+        /**
+         * FOR SYNTAX: 
+         * for(initial, condition, update){
+         *      statements;
+         * } 
+        */
+
+        // for (let counter = 1; counter <= 5; counter++){
+        //     console.log(counter);
+        // }
+
+
+        /**
+         * FOR SYNTAX: 
+         * initialize
+         * while(condition){
+         *      statements;
+         *      update;
+         * } 
+        */
+
+        let counter = 7;
+        while (counter <= 5) {
+            console.log(counter);
+            counter++;
         }
-        
+
+        /**
+         * FOR SYNTAX: 
+         * initialize
+         * do{
+         *      statements;
+         *      update;
+         * } while(condition);
+        */
+
+        // do{
+        //     console.log(counter);
+        //     counter++;
+        // } while (counter <= 5);
 
 
-        
-        
-        
+        let year = Number(prompt("Enter any Year to check if it is a leap year"))
+
+        if (year % 4 == 0) {
+            // If 4 divides without a remainder, test 100
+             if (year % 100 == 0) {
+                // If 100 divides without a remainder, test 400
+                if(year % 400 == 0){
+                    // If 400 divides without a remainder, then it is a Leap Year
+                    alert(`${year} is a leap year`);
+                }else{
+                    // If 400 divides with a remainder, it is not a leap year.
+                    alert(`${year} is not a leap year`);
+                }
+            } else {
+                // It is a leap year as long as 100 can not divide it, but 4 did.
+                alert(`${year} is a leap year`);
+            }
+        } else {
+            // if 4 could not divide, it is not a leap year.
+           alert(`${year} is not a leap year`);
+        }
 
 
-        
-        
-        
 
-        
 
-        
 
 
     </script>
 </body>
+
 </html>
