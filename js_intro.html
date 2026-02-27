@@ -86,15 +86,84 @@
         //     alert(`${number} is an odd number`);
         // }
 
-        let a = 5;
-        let b = "5";
+        // let a = 5;
+        // let b = "5";
 
-        // console.log(a == b);
-        // console.log(a === b);
+        // // console.log(a == b);
+        // // console.log(a === b);
 
-        let isBiger = a > b || b == a;
+        // let isBiger = a > b || b == a;
 
-        console.log(isBiger);
+        // console.log(isBiger);
+
+
+        // let age = Number(prompt("How old are you?"));
+
+        // if (age >= 18 ){
+        //     alert("You are an adult");
+        // }else{
+        //     alert("You are underaged");
+        // }
+
+        // if (age <= 3){
+        //     alert("You are an infant");
+        // }else if(age <= 12){
+        //     alert("You are a child");
+        // }else if (age <= 17){
+        //     alert("You are a teenager");
+        // }else{
+        //     alert("you are an adult");
+        // }
+
+        // Tenary Operator (?)
+        // SYNTAX: (Condition) ? True : False
+        // (age >= 18 ) ? alert("You are an adult") : alert("You are underaged");
+
+
+
+        /** 
+         * SYNTAX: 
+         * switch (condition){
+         *  case value1:
+         *      statements;
+         *      break;
+         *  case value2:
+         *      statements;
+         *      break;
+         * 
+         * 
+         *  default:
+         *      statements;
+         * }
+         */
+
+        //  Example;
+        let option = Number(prompt(`Choose Your Favourite Color \n1. Blue\n2. Red\n3. Orange\n.4. Indigo`));
+
+        switch (option){
+            case 1:
+                alert("Awh.. That's my favourite color too.");
+                break;
+            
+            case 2:
+                alert("Not, bad, red compliment my favourite");
+                break;
+
+            case 3: 
+                alert("Are you hungry? Orange color usually suits food.");
+                break;
+
+            case 4:
+                alert("indigo is one of the Rainbows color");
+                break;
+
+            default:
+                alert("Invalid option selected! Please, try again.");
+                break;
+        }
+        
+
+
         
         
         
