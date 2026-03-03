@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array vs Object</title>
+</head>
+<body>
+    
+
+    <script>
+        // let names = [];
+        // let ages = [];
+
+        // for (let i = 0; i < 5; i++) {
+        //     names[i] = prompt("Enter the name of student");
+        //     ages[i] = Number(prompt("Enter his/her age"));
+        // }
+
+        let names = Array(5);
+        let ages = Array(5);
+
+        // Prompting the user to enter names and ages of students
+        for (let i = 0; i < names.length; i++) {
+            names[i] = prompt("Enter the name of studen " + (i + 1));
+            ages[i] = Number(prompt("Enter his/her age"));
+        }
+
+        // Printing what has been stored inside the arrays
+        for (let i = 0; i < names.length; i++) {
+            // console.log(names[i] + " is " + ages[i] + " years old.");
+            console.log(`${names[i]} is ${ages[i]} years old`);            
+        }
+        
+        
+        
+        
+    </script>
+</body>
+</html>

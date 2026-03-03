@@ -211,28 +211,58 @@
         // } while (counter <= 5);
 
 
-        let year = Number(prompt("Enter any Year to check if it is a leap year"))
+        // let year = Number(prompt("Enter any Year to check if it is a leap year"))
 
-        if (year % 4 == 0) {
-            // If 4 divides without a remainder, test 100
-             if (year % 100 == 0) {
-                // If 100 divides without a remainder, test 400
-                if(year % 400 == 0){
-                    // If 400 divides without a remainder, then it is a Leap Year
-                    alert(`${year} is a leap year`);
-                }else{
-                    // If 400 divides with a remainder, it is not a leap year.
-                    alert(`${year} is not a leap year`);
-                }
-            } else {
-                // It is a leap year as long as 100 can not divide it, but 4 did.
-                alert(`${year} is a leap year`);
-            }
-        } else {
-            // if 4 could not divide, it is not a leap year.
-           alert(`${year} is not a leap year`);
-        }
+        // if (year % 4 == 0) {
+        //     // If 4 divides without a remainder, test 100
+        //     if (year % 100 == 0) {
+        //         // If 100 divides without a remainder, test 400
+        //         if (year % 400 == 0) {
+        //             // If 400 divides without a remainder, then it is a Leap Year
+        //             alert(`${year} is a leap year`);
+        //         } else {
+        //             // If 400 divides with a remainder, it is not a leap year.
+        //             alert(`${year} is not a leap year`);
+        //         }
+        //     } else {
+        //         // It is a leap year as long as 100 can not divide it, but 4 did.
+        //         alert(`${year} is a leap year`);
+        //     }
+        // } else {
+        //     // if 4 could not divide, it is not a leap year.
+        //     alert(`${year} is not a leap year`);
+        // }
 
+        // for (year = 1990; year <= 2026; year++) {
+        //     if((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0){
+        //         console.log(`${year} is a leap year`);
+        //     }
+        // }
+
+        /**
+         *  A program to check number from 1 to 100. If a number is divisible by 3, print 'Evil'.
+         * if a number is divisible by 5, print 'City'. If it is divisible by both, print 'Evil City'
+         */
+
+        // for (let number = 1; number <= 100; number++) {
+        //     if ((number % 3 == 0) && (number % 5 == 0)) {
+        //         console.log(number + ": Evil City");
+        //     }else if(number % 3 == 0){
+        //         console.log(number + ": Evil");
+        //     }else if(number % 5 == 0){
+        //         console.log(number + ": City")
+        //     }  
+        // }
+
+        // for (let number = 1; number <= 100; number++) {
+        //     if ((number % 3 == 0) && (number % 5 !== 0)) {
+        //         console.log(number + " - Evil");
+        //     }else if((number % 5 == 0) && (number % 3 !== 0)){
+        //         console.log(number + " - City");
+        //     }else if((number % 3 == 0) && (number % 5 == 0)){
+        //         console.log(number + " - Evil City")
+        //     }  
+        // }
 
 
 
