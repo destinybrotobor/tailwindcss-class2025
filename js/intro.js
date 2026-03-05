@@ -54,20 +54,74 @@
 
 
 // Task 3
-let num1, num2; // Declaring Variable For Data Collection
+// let num1, num2; // Declaring Variable For Data Collection
 
-// Prompting the user to enter numbers (Data Collection)
-num1 = Number(prompt("Enter First Number"));
-num2 = Number(prompt("Enter Second Number"));
+// // Prompting the user to enter numbers (Data Collection)
+// num1 = Number(prompt("Enter First Number"));
+// num2 = Number(prompt("Enter Second Number"));
 
-// Illustrating Data manipulation (Calculation)
-let sum = num1 + num2;
-let difference = num1 - num2;
-let product = num1 * num2;
-let quotient = num1 / num2;
+// // Illustrating Data manipulation (Calculation)
+// let sum = num1 + num2;
+// let difference = num1 - num2;
+// let product = num1 * num2;
+// let quotient = num1 / num2;
 
-// Displaying the results
-console.log(`The sum of ${num1} and ${num2} is ${sum}`);
-console.log(`The difference of ${num1} and ${num2} is ${difference}`);
-console.log(`The product of ${num1} and ${num2} is ${product}`);
-console.log(`The quotient of ${num1} and ${num2} is ${quotient}`);
+// // Displaying the results
+// console.log(`The sum of ${num1} and ${num2} is ${sum}`);
+// console.log(`The difference of ${num1} and ${num2} is ${difference}`);
+// console.log(`The product of ${num1} and ${num2} is ${product}`);
+// console.log(`The quotient of ${num1} and ${num2} is ${quotient}`);
+
+
+
+/**
+ * =========================
+ *    JavaScript Objects
+ * =========================
+ */
+
+// const user = {
+//     name: "Chimezie Emmanuel",
+//     alias: "Wrong Capsule",
+//     age: 30,
+//     phone: "08012345678"
+// };
+
+// console.log(user.name);
+// console.log(user.alias);
+// console.log(user.age);
+// console.log(user.phone);
+
+// Creating Example of Arrays containing Objects
+const users = [
+    {
+        name: "Chimezie Emmanuel",
+        alias: "Wrong Capsule",
+        age: 30,
+        phone: "08012345678"
+    },
+    {
+        name: "Precious Emmanuel",
+        alias: "Precious",
+        age: 30,
+        phone: "08012345678"
+    },
+    {
+        name: "Daniel Emmanuel",
+        alias: "Daniel",
+        age: 30,
+        phone: "08012345678"
+    },
+    {
+        name: "Kingsley Daniels",
+        alias: "Josh2Funny",
+        age: 30,
+        phone: "08012345678"
+    }
+];
+
+console.log(users[0]);
+
+
+
+// NOTE: JSON (JavaScript Object Notation)
