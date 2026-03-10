@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with JS + HTML</title>
+    <link rel="shortcut icon" href="assets/images/hero-image.jpg" type="image/*">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- <div id="blue" class="box-class"></div>
+    <div id="yellow" class="box-class"></div>
+    <div id="red" class="box-class"></div>
+    <div id="black" class="box-class"></div>
+    <div id="purple" class="box-class"></div> -->
+
+    <section class="bg-gray-50 min-h-10 px-5 py-10 space-y-3 text-xl">
+        <div>
+            <strong>Fullname:</strong> <input type="text" placeholder="Enter your name" id="inp-name" class="border py-1 px-3">
+        </div>
+        <div>
+            <strong>Year of Birth:</strong> <input type="text" placeholder="What year were you born" id="inp-year"
+                class="border py-1 px-3">
+        </div>
+        <div>
+            <button onclick="calculateAge()" class="bg-blue-400 text-white rounded-md py-1 px-3">
+                Submit
+            </button>
+        </div>
+    </section>
+
+    <section class="bg-gray-200 min-h-10 px-5 py-10 space-y-3 text-xl">
+        <div>
+            <strong>Fullname:</strong> <span id="sp-name"></span>
+        </div>
+        <div>
+            <strong>Year of Birth:</strong> <span id="sp-year"></span>
+        </div>
+        <div>
+            <strong>Age:</strong> <span id="sp-age"></span>
+        </div>
+    </section>
+
+
+    <tag>
+        content (Text/HTML)
+    </tag>
+
+
+    <script>
+        // // Referrence an element using its ID
+        // let boxElemnt = document.getElementById("box");
+
+        // boxElemnt.style.backgroundColor = "purple";
+        // boxElemnt.style.height = "120px";
+        // boxElemnt.style.width = "120px";
+
+        // // Referrence an element using its Class Name
+        // let boxes = document.getElementsByClassName("box-class");
+
+        // boxes[4].style.backgroundColor = "purple"; // Using Element Index
+        // boxes["purple"].style.backgroundColor = "purple";
+        // boxes["purple"].style.height = "120px";
+        // boxes["purple"].style.width = "120px";
+
+
+        /**
+         * Sample Program 1: Accept the name and age from the user using windows.prompt()
+        */
+        function calculateAge() {
+            // name = prompt("What is your name?");
+            // yearOfBirth = prompt("What year were you born?");
+
+            name = document.getElementById("inp-name").value;
+            yearOfBirth = document.getElementById("inp-year").value;
+
+            age = 2026 - parseInt(yearOfBirth);
+
+            document.getElementById('sp-name').innerText = name;
+            document.getElementById('sp-year').innerText = yearOfBirth;
+            document.getElementById('sp-age').innerText = age + " years";
+
+            document.getElementById('sp-name').style.color = "blue";
+        }
+    </script>
+</body>
+
+</html>
