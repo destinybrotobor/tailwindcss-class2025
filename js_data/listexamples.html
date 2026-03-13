@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Elements</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+
+    <h1 class="text-4xl mt-10 text-center font-bold">
+        Working With List Elements
+    </h1>
+
+    <section class="bg-blue-100 w-fit min-h-20 mx-auto my-10 p-6">
+        <div>
+            <input type="text" placeholder="Enter a value" id="n-data"
+                class="bg-white text-black border border-slate-400 mb-3 h-8 px-3"
+                onkeypress="keyTracker(event)"
+            >
+        </div>
+        <div>
+            <button onclick="addData()" class="py-1 px-3 rounded-sm bg-blue-500 text-white">
+                Add
+            </button>
+        </div>
+        <hr class="my-3">
+        <div>
+            <ul id="list-element">
+                <li></li>
+            </ul>
+        </div>
+    </section>
+
+
+    <script>
+        // function addData(){
+        //     // const inputValue = document.getElementById('n-data').value;
+        //     const inputBox = document.getElementById('n-data');
+        //     // let listItem = `<li>${inputValue}</li>`; // This will append as a text instead of HTML Elements
+
+
+        //     // console.log(inputValue, inputBox.value);
+            
+
+        //     let li = document.createElement('li'); // creating a new list item element (li)
+            
+        //     li.innerText = inputBox.value;
+        //     document.getElementById('list-element').append(li);
+
+        //     inputBox.value = "";
+        //     inputBox.focus();
+        // }
+
+
+        // New Syntax
+
+        let addData = () => {
+            // const inputValue = document.getElementById('n-data').value;
+            const inputBox = document.getElementById('n-data');
+            // let listItem = `<li>${inputValue}</li>`; // This will append as a text instead of HTML Elements
+
+
+            // console.log(inputValue, inputBox.value);
+            
+
+            let li = document.createElement('li'); // creating a new list item element (li)
+            
+            li.innerText = inputBox.value;
+            document.getElementById('list-element').append(li);
+
+            inputBox.value = "";
+            inputBox.focus();
+        }
+
+        let keyTracker = (event) => {
+            if(event.keyCode == 13){
+                addData()
+            }
+        }
+    </script>
+
+</body>
+
+</html>
