@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <section class="flex flex-col space-y-4 py-2 px-4">
+        <div>
+            <input type="text" name="" id="naira" placeholder="Naira Value" class="border" onkeyup="convert(event, 'dollar')">
+        </div>
+        <div>
+            <input type="text" name="" id="dollar" placeholder="Dollar Value" class="border" onkeyup="convert(event, 'naira')">
+        </div>
+    </section>
+
+
+    <script>
+        let testFunction = (ev, option) => {
+            /**
+             * The ev parameter represent the event.
+             * The target in ev.target represent the HTML Element that trigger the event
+             * While the option parameter takes in the second argument that was passed to the function.
+             */
+            // console.log(ev, ev.target, option);
+            
+            // To get the value of the target element, we simply call the value property of the target
+            console.log(ev.target.value);
+            
+        }
+
+        let convert = (event, option) => {
+            const conversionRate = 1450;
+            let inputValue = event.target.value;
+            let convertedValue;
+
+            switch (option) {
+                case "naira":
+                    convertedValue = Number(inputValue) * conversionRate;
+                    document.getElementById('naira').value = convertedValue;
+                    break;
+
+                case "dollar":
+                    convertedValue = Number(inputValue) / conversionRate;
+                    document.getElementById('dollar').value = convertedValue;
+                    break;
+
+                default:
+                    alert("Invalid Option Selected")
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

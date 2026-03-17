@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <section class="flex flex-col space-y-4 py-2 px-4">
+        <div>
+            <input type="text" name="" id="naira" placeholder="Naira Value" class="border">
+        </div>
+        <div>
+            <input type="text" name="" id="dollar" placeholder="Dollar Value" class="border">
+        </div>
+        <div>
+            <select name="" id="covertTo" class="border">
+                <option value="dollar">To Dollar</option>
+                <option value="naira">To Niara</option>
+            </select>
+        </div>
+
+        <div>
+            <button onclick="convert()" class="bg-blue-500 text-white rounded-lg py-1 px-3">
+                Convert 
+            </button>
+        </div>
+    </section>
+
+
+    <script>
+        let convert = () => {
+            const conversionRate = 1450;
+            const dollarInput = document.getElementById('dollar');
+            const nairaInput = document.getElementById('naira');
+            const convertOption = document.getElementById('covertTo');
+            let convertedValue;
+            
+            switch(convertOption.value){
+                case "naira":
+                        convertedValue = Number(dollarInput.value) * conversionRate;
+                        nairaInput.value = convertedValue;
+                    break;
+
+                case "dollar":
+                        convertedValue = Number(nairaInput.value) / conversionRate;
+                        dollarInput.value = convertedValue;
+                    break;
+
+                default:
+                    alert("Invalid Option Selected")
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
