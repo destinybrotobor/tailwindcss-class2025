@@ -12,39 +12,56 @@
 
     <div>
         <input type="text" placeholder="Enter a year to check" id="input-year">
-        <button onclick="greetSomebody('Christian')">
+        <button id="button-check">
             Check
         </button>
+        <div>
+            <span id="span-result"></span>
+        </div>
     </div>
 
 
     <script>
+        let checkButton = document.getElementById('button-check');
+
+        // let checkYear = () => {
+        //     alert("Hello World")
+        // }
+
         /**
-         * ============== ES5 (OLD) Methods ==========
-         * ==== Syntax ====
-         * function methodName ([parameters]){
-         *      Statements;
-         * }
-         * 
-         * ============= ES6+ (MODERN) Methods =======
-         * [let/const] methodName = ([parameters]) => {
-         *      Statements;
-         * }
-         * 
-         * 
-         * ===========================================
-         * Parameters: These are variables that are decleared with the method(function) definition header.
-         * The are used to recieve external data into the method(function) through Arguments.
-         * 
-         * Argument: An  Argument is simply the value/data that is passed into a function when it is invoked(called)
-         * 
-         * Method Invokation is simply the process of calling a method in other for it to perform its predefined task.
-         * That Means: A method must be called before it performs it function.
-        */
+         * NEW: Adding event listener to an HTML Element. 
+         * It listen to when certian event are triggered on the element.
+         * The Method "addEventListener" recieve two argument, First is the Event, while the second is the (callback) function.
+         * SYNTAX: htmlElement.addEventListener('eventName', function);
+         */
 
+        // Example; Testing with old function syntax
+        // checkButton.addEventListener('mousemove', function(){
+        //     alert("Trying Old Function")
+        // });
 
+        checkButton.addEventListener('click', () => {
+            let yearInput = document.getElementById('input-year');
 
+            if (yearInput.value == '') {
+                alert("Invalid Input! Please Enter a Year to check.");
+                return;
+            }
 
+            let year = Number(yearInput.value);
+
+            if(isNaN(year)){
+                alert("Invalid Number"); // What the user entered is not a number
+            }else{
+                // Proceed with the leap year calculation
+                if((year % 4 == 0 && year % 100 != 0) || year % 400 == 0){
+                    document.getElementById('span-result').innerText = year + " is a leap year"
+                }else{
+                    document.getElementById('span-result').innerText = year + " is not a leap year"
+                }
+            }
+            
+        });
     </script>
 </body>
 

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    
+    <div id="color-box" class="mx-auto my-10 h-32 w-32 bg-gray-200">
+
+    </div>
+
+    <section class="mt-20 flex items-center justify-center gap-1">
+        <button class="bg-gray-800 text-white py-0.5 px-3 rounded-lg block picker-buttons">indigo</button>
+        <button class="bg-gray-800 text-white py-0.5 px-3 rounded-lg block picker-buttons">yellow</button>
+        <button class="bg-gray-800 text-white py-0.5 px-3 rounded-lg block picker-buttons">red</button>
+        <button class="bg-gray-800 text-white py-0.5 px-3 rounded-lg block picker-buttons">orange</button>
+        <button class="bg-gray-800 text-white py-0.5 px-3 rounded-lg block picker-buttons">green</button>
+    </section>
+
+
+    <script>
+        let buttons = document.getElementsByClassName('picker-buttons'); // Get all the button that have same class
+        let colorBox = document.getElementById('color-box');
+
+        // buttons[0].addEventListener("click", () => {
+        //     alert("You just clicked the button 1")
+        // })
+        
+        // Loop through all the button (using for-loop) and add an event listener to each of them
+        for(let index = 0; index < buttons.length; index++){
+            buttons[index].addEventListener('click', (ev) => {
+                let color = ev.target.innerText; // The color name is gotten from the innerText of the button that was clicked
+                console.log(color);
+                
+                colorBox.style.backgroundColor = color // Assigning the color to the colour box
+            })
+        }
+
+    </script>
+</body>
+</html>
