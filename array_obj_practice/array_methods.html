@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+
+    <h1 class="text-4xl mt-10 text-center font-bold text-blue-500">
+        Array Methods
+    </h1>
+
+    <div class="mx-auto my-10 w-sm min-h-20 bg-blue-200 py-2 px-4 rounded-lg">
+        <section>
+            <input type="search" placeholder="Search for a name" id="search-box" class="w-full h-8 px-3 border">
+        </section>
+
+        <section>
+            <ul id="names-list" class="p-3">
+            </ul>
+        </section>
+    </div>
+
+
+
+
+    <script>
+
+        // let fruits = ["apple", "banana", "orange", "grape", "mango"];
+        // console.log('Printing the whole array', fruits);
+
+        // Testing POP Method; for removing an element from the array
+        // fruits.pop();
+        // console.log('Printing the remaining array', fruits);
+
+        // Testing PUSH Method; for adding a new element to the array
+        // fruits.push("Paw-Paw")
+        // console.log('Printing the array add new fruit', fruits);
+
+        // Testing SLICE Method; Create a new array by selecting some elements from an existing array
+        // Syntax: ArrayName.slice(Starting Index, Ending Index)
+        // let newFruits = fruits.slice(0,3)
+        // console.log('Printing the array after slice method', newFruits, fruits);
+
+        // Testing SPLICE Method; Create a new array by selecting some elements from an existing array
+        // Syntax: ArrayName.splice(Starting Index, Ending Index)
+        // The splice method will modify the original array by removing the selected elements and returning them as a new array
+        // let newFruits2 = fruits.splice(0,3)
+        // console.log('Printing the array after splice method', newFruits2, fruits);
+
+
+        // Testing INDEXOF Method; for finding the index of an element in the array
+        // let indexOfMango = fruits.indexOf("mango");
+
+        // Testing INCLUDES Method; for checking if an element is present in the array
+        // let isGrapeIncluded = fruits.includes("grape");
+
+        // Testing CONCAT Method; for combining two or more arrays into a new array
+        // let tropicalFruits = ["pineapple", "papaya", "kiwi"];
+        // let allFruits = fruits.concat(tropicalFruits);
+        // // console.log('Printing the combined array', allFruits);
+
+
+        // Testing Find Method; for finding the first element in the array that satisfies a given condition
+        // console.log(allFruits);
+
+        // let foundFruit = allFruits.find((fruit) => {
+        //     let found;
+        //     if (fruit == "pineapples") {
+        //         found = fruit;
+        //     }
+        //     return found;
+        // });
+
+        // let userInput = prompt("Enter the name of the fruit you want to find: ");
+
+        // let foundFruit = allFruits.find((fruit) => fruit == userInput);
+
+        // SYNTAX: condition ? true : false; // Ternary Operator; A shorter way of writing an if-else statement
+        // (foundFruit == undefined) ? alert("Fruit not found") : alert(`Found the fruit: ${foundFruit}`);
+        // console.log('Printing the found fruit', foundFruit);
+
+
+        // Testing Filter Method; for creating a new array with all elements that satisfy a given condition
+        // let fruitsWithA = allFruits.filter((fruit) => fruit.includes("an"));
+        // console.log('Printing the filtered array', fruitsWithA);
+
+        // let names = ["james", "joshua", "Longman"]
+        // names.forEach((name, index) => {
+        //     console.log(name, index);
+        // });
+
+        // names.map((name, index) => {
+        //     console.log(name, index);
+        // });
+        // populateNames(['James', 'Joshua', 'Amadi']); // Using methods, for reusability
+
+
+    </script>
+</body>
+
+</html>

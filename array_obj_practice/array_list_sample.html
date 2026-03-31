@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../assets/fa/css/all.css">
+</head>
+
+<body>
+
+
+    <h1 class="text-4xl mt-10 text-center font-bold text-blue-500">
+        Array Methods
+    </h1>
+
+    <div class="mx-auto my-10 w-sm min-h-20 bg-blue-200 py-2 px-4 rounded-lg">
+        <section class="flex mb-10">
+            <input type="text" placeholder="Add New Name" id="add-box" class="w-full h-8 px-3 border">
+            <button class="bg-red-500 text-white py-1 px-3 rounded-lg" onclick="addItem()">
+                ADD
+            </button>
+        </section>
+
+        <section>
+            <input type="search" placeholder="Search for a name" id="search-box" class="w-full h-8 px-3 border" onkeyup="searchNames()">
+        </section>
+
+        <section>
+            <ul id="names-list" class="divide-y">
+
+            </ul>
+        </section>
+    </div>
+
+
+
+
+    <script>
+        /**
+         * A More realistic example using user names data
+         */
+
+        let names = []; // New Empty array of names
+
+        let populateNames = (nameArray) => {
+            let listContainer = document.getElementById('names-list');
+            let listItems = '';
+
+            // nameArray.map()
+            nameArray.forEach((name, index) => {
+                listItems += `<li class="flex justify-between">
+                    <span class="font-semibold p-2 inline-block">${name}</span>
+                    <button class="py-1 px-2 text-red-500" onclick="deleteItem(${index})">
+                        <i class="fa-solid fa-trash-alt"></i>
+                    </button>
+                </li>`;
+            });
+
+            listContainer.innerHTML = listItems
+        }
+
+        let deleteItem = (indexOfItem) => {
+            names.splice(indexOfItem, 1); //remove one element starting from the selected index
+            populateNames(names) // populate the remaining name in the names array
+        }
+
+        let addItem = () => {
+            let inputElement = document.getElementById('add-box');
+
+            if (inputElement.value == "") {
+                alert("Name input cannot be empty");
+                return;
+            }
+
+            names.push(inputElement.value); // Add the value from the input into the names array using the push method
+            
+            populateNames(names); // call the populatenames method and pass the names array to it as an argument
+
+            inputElement.value = ''; // clear the input field
+            inputElement.focus();
+        }
+
+        let searchNames = () => {
+            let searchBox = document.getElementById("search-box");
+
+            if (searchBox.value == "") {
+                populateNames(names);
+                return;
+            }
+
+            let searchValue = searchBox.value;
+
+            let result = names.filter((name) => {
+                return name.toLowerCase().includes(searchValue.toLowerCase());
+            });
+
+            // let result = names.find((name) => name == searchValue);  // This will return the element if found
+            // let result = names.filter((name) => name.toLowerCase() == searchValue.toLowerCase()) 
+            // console.log(result);
+
+            populateNames(result);
+
+        }
+
+
+    </script>
+</body>
+
+</html>
