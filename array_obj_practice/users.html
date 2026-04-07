@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../assets/fa/css/all.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
@@ -65,15 +66,14 @@
                 <button type="submit" class="bg-blue-500 text-white rounded-lg py-2 px-3 mt-4">
                     <i class="fa-solid fa-save"></i> Submit
                 </button>
+            </form>    
         </section>
 
         <!-- User Cards Section -->
         <section class="min-h-screen w-2/3 grow py-4 px-8">
             <div class="bg-white py-2 px-6">
-                <form>
-                    <input type="search" id="search-input" placeholder="Search for a user"
-                        class="border px-3 py-2 w-full" onkeyup="handleSearch(event)">
-                </form>
+                    <input type="search" id="search-input" placeholder="search for a user"
+                    class="border px-3 py-2 w-full" onkeyup="handleSearch(event)">
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5" id="card-container">
                 <!-- Container content will be render from JavaScript -->
