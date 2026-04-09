@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../assets/fa/css/all.css">
+</head>
+
+<body>
+    <div class="bg-blue-400 min-h-screen w-full flex justify-start items-start">
+        <!-- Form Section -->
+        <section class="min-h-screen w-1/3 bg-white py-4 px-8">
+            <h1 class="mb-10 mt-5">
+                <span class="text-4xl font-bold text-blue-500">
+                    User Registration Form
+                </span>
+            </h1>
+            <form onsubmit="handleFormSubmit(event)" name="user-form">
+                <div class="flex flex-col space-y-4">
+                    <div class="flex flex-col">
+                        <label class="text-sm font-bold" for="firstname">Firstname</label>
+                        <input type="text" name="firstname" placeholder="Enter your firstname"
+                            class="border px-3 py-2 w-full" required>
+                    </div>
+                    <div class="flex flex-col">
+                        <label class="text-sm font-bold" for="lastname">Lastname</label>
+                        <input type="text" id="lastname" name="lastname" placeholder="Enter your lastname"
+                            class="border px-3 py-2 w-full" required>
+                    </div>
+                    <div class="flex flex-col">
+                        <label class="text-sm font-bold" for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email"
+                            class="border px-3 py-2 w-full" required>
+                    </div>
+                    <div class="flex flex-col">
+                        <label class="text-sm font-bold" for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number"
+                            class="border px-3 py-2 w-full" required>
+                    </div>
+                    <div class="flex flex-col">
+                        <label class="text-sm font-bold" for="account-status">Account Status</label>
+                        <div class="flex space-x-4">
+                            <div class="flex items-center">
+                                <input type="radio" id="active" name="account-status" value="active" class="mr-2">
+                                <label for="active">Active</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="inactive" name="account-status" value="inactive" class="mr-2">
+                                <label for="inactive">Inactive</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <label class="text-sm font-bold" for="account-type">Account Type</label>
+                        <select id="account-type" name="account-type" class="border px-3 py-2 w-full">
+                            <option value="savings">Savings</option>
+                            <option value="current">Current</option>
+                            <option value="credit">Credit</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="bg-blue-500 text-white rounded-lg py-2 px-3 mt-4">
+                    <i class="fa-solid fa-save"></i> Submit
+                </button>
+        </section>
+
+        <!-- User Cards Section -->
+        <section class="min-h-screen w-2/3 grow py-4 px-8">
+            <div class="bg-white py-2 px-6">
+                <form>
+                    <input type="search" id="search-input" placeholder="Search for a user"
+                        class="border px-3 py-2 w-full" onkeyup="handleSearch(event)">
+                </form>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5" id="card-container">
+                <!-- Container content will be render from JavaScript -->
+            </div>
+        </section>
+    </div>
+
+
+    <script>
+        // Create a dummy user data
+        // let users = [
+        //     "Amadi",
+        //     "John",
+        //     "Andrew"
+        // ]
+
+        // let user = {
+        //     firstname: "Amadi",
+        //     lastname: "Akpan",
+        //     email: "aamadi@gmail.com",
+        //     account_type: "personal",
+        //     account_status: "active"
+        // }
+
+        // let users = [
+        //     {
+        //         firstname: "John",
+        //         lastname: "Akpan",
+        //         email: "jpakpan@gmail.com",
+        //         phone: "090123456789",
+        //         account_type: "personal",
+        //         account_status: "active"
+        //     },
+        //     {
+        //         firstname: "Amadi",
+        //         lastname: "Akpan",
+        //         email: "aamadi@gmail.com",
+        //         phone: "080987654321",
+        //         account_type: "business",
+        //         account_status: "active"
+        //     },
+        //     {
+        //         firstname: "Joy",
+        //         lastname: "Nnamdi",
+        //         email: "aamadi@gmail.com",
+        //         phone: "090432198765",
+        //         account_type: "personal",
+        //         account_status: "in-active"
+        //     }
+        // ]
+
+        let users = []; // Empty array to store user data
+
+
+        let populateCards = (userData) => {
+            let cardContainer = document.getElementById("card-container");
+            let userCard = '';
+
+            userData.forEach((user, index) => {
+                userCard += `<div id="user-template">
+                    <div class="bg-white shadow-md rounded-lg p-6 flex flex-col gap-1">
+                        <h2 class="font-bold text-lg">${user.firstname} ${user.lastname}</h2>
+                        <p class="text-sm text-gray-600">Email: <span class="email">${user.email}</span></p>
+                        <p class="text-sm text-gray-600">Phone: <span class="phone">${user.phone}</span></p>
+                        <p class="text-sm text-gray-600">Account Status: <span class="account-status">${user.account_status}</span></p>
+                        <p class="text-sm text-gray-600">Account Type: <span class="account-type">${user.account_type}</span></p>
+                        <button type="button" class="bg-red-500 text-white rounded-lg py-2 px-3 mt-4" onclick="confirmDelete(${index})">
+                            <i class="fa-solid fa-trash-alt"></i> Delete
+                        </button>
+                    </div>
+                </div>`
+            });
+
+            // for (let index = 0; index < userData.length; index++) {
+            //     let user = userData[index];
+            //     userCard += `<div id="user-template">
+            //         <div class="bg-white shadow-md rounded-lg p-6 flex flex-col gap-1">
+            //             <h2 class="font-bold text-lg">${user.firstname} ${user.lastname}</h2>
+            //             <p class="text-sm text-gray-600">Email: <span class="email">${user.email}</span></p>
+            //             <p class="text-sm text-gray-600">Phone: <span class="phone">${user.phone}</span></p>
+            //             <p class="text-sm text-gray-600">Account Status: <span class="account-status">${user.account_status}</span></p>
+            //             <p class="text-sm text-gray-600">Account Type: <span class="account-type">${user.account_type}</span></p>
+            //             <button type="button" class="bg-red-500 text-white rounded-lg py-2 px-3 mt-4">
+            //                 <i class="fa-solid fa-trash-alt"></i> Delete
+            //             </button>
+            //         </div>
+            //     </div>`
+            // }
+
+            cardContainer.innerHTML = userCard;
+        }
+
+        populateCards(users);
+
+
+        // Method to handle Search Query
+        let handleSearch = (ev) => {
+            let searchValue = ev.target.value;
+
+            if (searchValue === '') {
+                populateCards(users)
+                return;
+            }
+
+            let searchResult = users.filter((user) => {
+                // if (user.firstname.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()) || user.lastname.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())) {
+                //     return user;
+                // }
+                let fullName = `${user.firstname} ${user.lastname}`.toLocaleLowerCase();
+                if (fullName.includes(searchValue.toLocaleLowerCase()) || user.email.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()) || user.phone.includes(searchValue)) {
+                    return user;
+                }
+            })
+
+            populateCards(searchResult);
+        }
+
+
+        // Method to handle Form Submission
+        let handleFormSubmit = (ev) => {
+            ev.preventDefault();
+            let userForm = document.forms['user-form'];
+            // console.log(userForm['firstname'].value); // Accessing form input value using the name attribute of the input element
+            
+            let newUser = {
+                firstname: userForm.firstname.value, // Accessing form input value using the name attribute of the input element
+                lastname: userForm.lastname.value,
+                email: userForm.email.value,
+                phone: userForm.phone.value,
+                account_status: userForm['account-status'].value || "in-active", // Accessing form input value using the name attribute of the input element; if no value is selected, default to "inactive"
+                account_type: userForm['account-type'].value || "savings" // Accessing form input value using the name attribute of the input element; if no value is selected, default to "savings"
+            }
+
+            users.push(newUser); // Add the new user to the users array
+            populateCards(users); // Re-populate the user cards with the updated users array
+
+            userForm.reset(); // Reset the form after submission
+            userForm.firstname.focus(); // Set focus back to the first input field after form submission
+            
+        }
+
+        // Method to handle Delete User (This method will be implemented in the future to delete a user from the users array and update the user cards accordingly)
+        let confirmDelete = (index) => {
+            let confirmation = confirm("Are you sure you want to delete this user?");
+            if (confirmation) {
+                handleDeleteUser(index);
+            }
+        }
+
+        let handleDeleteUser = (index) => {
+            users.splice(index, 1); // Remove the user at the specified index from the users array
+            populateCards(users); // Re-populate the user cards with the updated users array
+        }
+
+
+    </script>
+</body>
+
+</html>
